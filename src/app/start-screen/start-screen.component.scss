@@ -1,0 +1,47 @@
+.start-screen {
+    background: #404040;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: 100vh;
+
+    }
+}
+
+.start-label-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 120px;
+    display: flex;
+    justify-content: center;
+    transition: filter 0.3s ease;
+
+    &:hover {
+        filter: brightness(1.4);
+        cursor: pointer;
+    }
+
+    img {
+        width: 30vw;
+        height: auto;
+
+    }
+
+    p {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        font-size: 60px;
+        transition: filter 0.3s ease;
+
+    }
+}
