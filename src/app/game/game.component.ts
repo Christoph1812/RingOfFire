@@ -8,13 +8,14 @@ import { Game } from '../models/game';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  pickCardAnimation = false;
+  pickCardAnimation: boolean = false;
   currentCard: string = '';
   game: Game;
 
   constructor() {
     this.game = new Game();
     console.log(new Game());
+    console.log(this.game.stack[0])
     console.log('Stack:', this.game.stack.pop());
   }
 
@@ -23,7 +24,6 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
-    console.log('Stack:', this.game.stack.pop()); // Überprüfe den Inhalt des stack-Arrays
     this.currentCard = String(this.game.stack.pop());
     this.pickCardAnimation = true;
   }
