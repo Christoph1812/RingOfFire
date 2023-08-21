@@ -1,10 +1,16 @@
 <div class="play-ground">
     <div class="card-stack">
+        <!-- Card Stack -->
         <img *ngFor="let c of [1, 2, 3]; let i=index;" [ngStyle]="{'right.px':i*5}"
             src="/assets/img/cards/card_cover.png" alt="Card cover">
-        <img (click)="takeCard()" [class.pick-card]="pickCardAnimation" style="right: 25px;"
-            src="/assets/img/cards/card_cover.png" alt="Card cover">
+        <img (click)="takeCard()" style="right: 25px;" src="/assets/img/cards/card_cover.png" alt="Card cover">
+
+        <!-- Stack for played cards -->
+        <img *ngFor="let card of game.playedCards" class="played-card" src="/assets/img/cards/{{ card }}.png"
+            alt="Card">
+
+        <!-- Current card (Animation) -->
         <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 25px;"
-            src="/assets/img/cards/spade_1.png" alt="Card cover">
+            src="/assets/img/cards/{{ currentCard }}.png" alt="Card cover">
     </div>
 </div>
